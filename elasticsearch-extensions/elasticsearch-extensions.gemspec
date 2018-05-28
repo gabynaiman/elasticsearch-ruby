@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
 
+  s.platform = Gem::Platform.new('java') if defined?(JRUBY_VERSION)
+
   s.add_dependency "ansi"
   s.add_dependency "elasticsearch"
   s.add_dependency "oj" unless defined?(JRUBY_VERSION)
